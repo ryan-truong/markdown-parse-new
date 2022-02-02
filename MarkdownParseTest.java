@@ -70,7 +70,7 @@ public class MarkdownParseTest {
     }
     @Test
     public void testNine() throws IOException{
-        assertEquals(new ArrayList<String>(), MarkdownParse.getLinks(getContents("test9md")));
+        assertEquals(List.of("something.com"), MarkdownParse.getLinks(getContents("test9.md")));
     }
     
 
