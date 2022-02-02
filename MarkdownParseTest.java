@@ -68,6 +68,10 @@ public class MarkdownParseTest {
         assertEquals(new ArrayList<String>(), 
             MarkdownParse.getLinks(getContents("test-file8.md")));
     }
+    @Test
+    public void testNine() throws IOException{
+        assertEquals(new ArrayList<String>(), MarkdownParse.getLinks(getContents("test9md")));
+    }
     
 
     public static String getContents(String filePath) throws IOException {
