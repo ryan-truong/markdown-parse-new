@@ -79,4 +79,26 @@ public class MarkdownParseTest {
         String contents = Files.readString(fileName);
         return contents;
     }
+
+    
+    //Tests for Lab 4
+    @Test
+    public void testSnippet1() throws IOException {
+        Path fileName = Path.of("labreport4-snippet1.md");
+        String contents = Files.readString(fileName);
+        assertEquals(List.of("url.com", "`google.com", "google.com","ucsd.edu"), MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void testSnippet2() throws IOException {
+        Path fileName = Path.of("labreport4-snippet2.md");
+        String contents = Files.readString(fileName);
+        assertEquals(List.of("a.com", "b.com", "a.com(())","example.com"), MarkdownParse.getLinks(contents));
+    }
+    @Test
+    public void testSnippet3() throws IOException {
+        Path fileName = Path.of("labreport4-snippet3.md");
+        String contents = Files.readString(fileName);
+        assertEquals(List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/", "github.com","https://cse.ucsd.edu/"), MarkdownParse.getLinks(contents));
+    }
 }
